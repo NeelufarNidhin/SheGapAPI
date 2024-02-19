@@ -10,3 +10,8 @@
 /Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/obj/Debug/net7.0/refint/Interfaces.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/obj/Debug/net7.0/Interfaces.pdb
 /Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/obj/Debug/net7.0/ref/Interfaces.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/bin/Debug/net7.0/Entities.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/bin/Debug/net7.0/Entities.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/obj/Debug/net7.0/Interfaces.csproj.CopyComplete
+/Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/bin/Debug/net7.0/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Interfaces/bin/Debug/net7.0/Shared.pdb
