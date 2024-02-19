@@ -21,17 +21,17 @@ namespace Services
 
         public async Task <IEnumerable<UserDto>> GetAllUsers(bool trackChanges)
         {
-			try
-			{
+			//try
+			//{
                 var users = await _repository.User.GetAllUsers(trackChanges);
                 var userDto = _mapper.Map<IEnumerable<UserDto>>(users);
                 return userDto;
-            }
-			catch (Exception ex)
-			{
-				_logger.LogError($"Something went wrong in the {nameof(GetAllUsers)} service method {ex}");
-				throw;
-			}
+            //}
+			//catch (Exception ex)
+			//{
+			//	_logger.LogError($"Something went wrong in the {nameof(GetAllUsers)} service method {ex}");
+			//	throw;
+			//}
 				
 			
 				
