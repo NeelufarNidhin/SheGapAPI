@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using Interfaces;
+using NLog;
 using SheGapAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,14 +12,25 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nl
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureLoggerService();
-builder.Services.AddControllers();
+builder.Services.ConfigureRepositoryManager();
+builder.Services.ConfigureServiceManager();
+builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(SheGapAPI.Presentation.AssemblyReference).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
+
+
+//Global Exception Handling using logger
+//var logger = app.Services.GetRequiredService<ILoggerManager>();
+//app.ConfigureExceptionhandler(logger);
+
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
