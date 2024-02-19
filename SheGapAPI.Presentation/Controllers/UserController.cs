@@ -17,16 +17,16 @@ namespace SheGapAPI.Presentation.Controllers
 		[HttpGet]
 		public async Task <IActionResult> GetUsers()
 		{
-			try
-			{
+			//try
+			//{
                 var users = await _service.UserService.GetAllUsers(trackChanges: false);
                 return Ok(users);
-            }
+   //         }
 
-			catch 
-			{
-				return StatusCode(500,"Internel Server Error");
-			}
+			//catch 
+			//{
+			//	return StatusCode(500,"Internel Server Error");
+			//}
 				
 			
 		}
