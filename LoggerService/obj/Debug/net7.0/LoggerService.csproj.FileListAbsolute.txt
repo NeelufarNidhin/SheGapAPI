@@ -13,3 +13,7 @@
 /Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/obj/Debug/net7.0/refint/LoggerService.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/obj/Debug/net7.0/LoggerService.pdb
 /Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/obj/Debug/net7.0/ref/LoggerService.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/bin/Debug/net7.0/Entities.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/bin/Debug/net7.0/Entities.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/bin/Debug/net7.0/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/LoggerService/bin/Debug/net7.0/Shared.pdb

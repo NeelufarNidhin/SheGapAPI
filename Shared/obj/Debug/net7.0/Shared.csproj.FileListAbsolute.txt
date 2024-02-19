@@ -1,0 +1,12 @@
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/bin/Debug/net7.0/Shared.deps.json
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/bin/Debug/net7.0/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/bin/Debug/net7.0/Shared.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.csproj.AssemblyReference.cache
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.AssemblyInfoInputs.cache
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.AssemblyInfo.cs
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.csproj.CoreCompileInputs.cache
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/refint/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/ref/Shared.dll
