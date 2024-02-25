@@ -38,6 +38,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.1, )"
@@ -216,7 +220,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/neelufarnidhin/Projects/SheGapAPI/Entities/Entities.csproj": {
+                "projectPath": "/Users/neelufarnidhin/Projects/SheGapAPI/Entities/Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
