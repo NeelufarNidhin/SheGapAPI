@@ -1,14 +1,13 @@
-﻿using System;
-using Interfaces;
+﻿using Interfaces;
 using LoggerService;
-using Microsoft.EntityFrameworkCore;
+using Services;
 using Repository;
 using Service.Interfaces;
-using Services;
+using Microsoft.EntityFrameworkCore;
 
 namespace SheGapAPI.Extensions
 {
-	public static class ServiceExtensions
+    public static class ServiceExtensions
 	{
 		public static void ConfigureCors(this IServiceCollection services) =>
 			services.AddCors(options =>

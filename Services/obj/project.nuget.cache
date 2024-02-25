@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rC5t1f8dRHalfY8tGxUdiLD7G+fzs7Uw3Y53SgSNWYRX+Q7hDGNRsAbqKvHAx71cyfKxSGVqPKj1zXbkY2Fsag==",
+  "dgSpecHash": "NTDDJ6MBRTjGhseX7Pyhb0k2UsdU60+cPWRVl59qTkQzifbSD6us5waAgJMY0K17NildKeYSYonwJATntJl9Vg==",
   "success": true,
   "projectFilePath": "/Users/neelufarnidhin/Projects/SheGapAPI/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,11 @@
     "/Users/neelufarnidhin/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.1/microsoft.aspnetcore.cryptography.internal.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.1/microsoft.aspnetcore.cryptography.keyderivation.7.0.1.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.http/2.2.2/microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/7.0.1/microsoft.aspnetcore.identity.entityframeworkcore.7.0.1.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.aspnetcore.webutilities/2.2.0/microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.entityframeworkcore/7.0.1/microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.1/microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",
@@ -23,8 +27,12 @@
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.identity.stores/7.0.1/microsoft.extensions.identity.stores.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.logging/7.0.0/microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.objectpool/2.2.0/microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
-    "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512"
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
