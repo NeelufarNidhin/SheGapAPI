@@ -42,6 +42,20 @@ namespace SheGapAPI.Presentation.Controllers
 			var employee = _service.EmployeeService.GetEmployeeById(id, trackChanges: false);
 			return Ok(employee);
 		}
+
+		[HttpPut("{id:guid}")]
+		public async  Task<IActionResult> UpdateEmployee(Guid employeeId, [FromBody] UpdateEmployeeDto employeeDto)
+		{
+			if(employeeDto is null)
+			{
+				return BadRequest("Employee is Null");
+
+			}
+
+			_service.EmployeeService.UpdateEmployee(employeeId, employeeDto, trackChanges: true);
+
+			return NoContent();
+		}
 	}
 }
 

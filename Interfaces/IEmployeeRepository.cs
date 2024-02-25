@@ -8,7 +8,7 @@ namespace Interfaces
 		Task <IEnumerable<Employee>> GetAllEmployees(bool trackChanges);
 		Task <Employee> GetEmployeeById(Guid employeeId, bool trackChanges);
 		void CreateEmployee(Employee employee);
-		void UpdateEmployee(Guid employeeId, Employee employee);
+		void UpdateEmployee( Employee employee);
 		
 	}
 }

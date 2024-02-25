@@ -25,9 +25,9 @@ namespace Repository
 
         
 
-        public void UpdateEmployee(Guid employeeId, Employee employee)
+        public void UpdateEmployee( Employee employee)
         {
-            throw new NotImplementedException();
+            Update(employee);
         }
 
         public async Task<Employee> GetEmployeeById(Guid employeeId, bool trackChanges)
