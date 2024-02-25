@@ -51,9 +51,16 @@ namespace Services
             return employeeDto;
         }
 
-        public EmployeeDto UpdateEmployee(Guid employeeId, UpdateEmployeeDto employeeDto)
+        public void UpdateEmployee(Guid employeeId, UpdateEmployeeDto employeeDto, bool trackChanges)
         {
-            throw new NotImplementedException();
+            var employeeEntity = _repository.Employee.GetEmployeeById(employeeId, trackChanges);
+            if(employeeEntity is null)
+            {
+                throw new EmployeeNotFoundException(employeeId);
+            }
+
+            _mapper.Map(employeeDto, employeeEntity);
+            _repository.Save();
         }
     }
 }

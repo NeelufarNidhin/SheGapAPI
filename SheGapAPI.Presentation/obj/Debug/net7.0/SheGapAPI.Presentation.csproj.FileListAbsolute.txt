@@ -15,3 +15,5 @@
 /Users/neelufarnidhin/Projects/SheGapAPI/SheGapAPI.Presentation/obj/Debug/net7.0/ref/SheGapAPI.Presentation.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/SheGapAPI.Presentation/bin/Debug/net7.0/Shared.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/SheGapAPI.Presentation/bin/Debug/net7.0/Shared.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/SheGapAPI.Presentation/bin/Debug/net7.0/Entities.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/SheGapAPI.Presentation/bin/Debug/net7.0/Entities.pdb

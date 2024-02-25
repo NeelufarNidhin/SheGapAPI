@@ -12,7 +12,8 @@ namespace Repository
 		{
 		}
 
-		public DbSet<UserDto> ApplicationUser { get; set; }
+		public DbSet<User> User { get; set; }
+		
 	}
 }
 
