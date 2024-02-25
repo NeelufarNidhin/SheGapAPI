@@ -6,13 +6,13 @@ using Shared.DTO;
 
 namespace Repository
 {
-	public class UserRepository : RepositoryBase<ApplicationUser> , IUserRepository
+	public class UserRepository : RepositoryBase<User> , IUserRepository
 	{
 		public UserRepository(RepositoryContext repositoryContext) : base(repositoryContext)
 		{
 		}
 
-		public async Task< IEnumerable<ApplicationUser>> GetAllUsers(bool trackChanges)
+		public async Task< IEnumerable<User>> GetAllUsers(bool trackChanges)
 		{
             return await FindAll(trackChanges)
            .OrderBy(c => c.FirstName)

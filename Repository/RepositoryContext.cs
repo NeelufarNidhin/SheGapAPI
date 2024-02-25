@@ -6,7 +6,7 @@ using Shared.DTO;
 
 namespace Repository
 {
-	public class RepositoryContext : IdentityDbContext<ApplicationUser>
+	public class RepositoryContext : IdentityDbContext<User>
 	{
 		public RepositoryContext(DbContextOptions  options) :base(options)
 		{

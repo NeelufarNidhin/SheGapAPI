@@ -9,7 +9,7 @@ namespace SheGapAPI
 	{
 		public MappingProfile()
 		{
-			CreateMap<ApplicationUser, UserDto>()
+			CreateMap<User, UserDto>()
 				.ReverseMap();
 		}
 	}

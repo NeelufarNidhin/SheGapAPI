@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Entities.Models
 {
-	public class ApplicationUser : IdentityUser
+	public class User : IdentityUser
 	{
         [Required(ErrorMessage = "First Name is a required !!")]
         [MaxLength(30, ErrorMessage = "Maximum length for the the Name is 30 characters")]
