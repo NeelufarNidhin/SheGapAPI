@@ -10,3 +10,6 @@
 /Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/refint/Shared.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.pdb
 /Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/ref/Shared.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/bin/Debug/net7.0/Entities.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/bin/Debug/net7.0/Entities.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/Shared/obj/Debug/net7.0/Shared.csproj.CopyComplete
