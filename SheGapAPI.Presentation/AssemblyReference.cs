@@ -1,11 +1,9 @@
 ﻿using System;
 namespace SheGapAPI.Presentation
 {
-	public class AssemblyReference
+	public static class AssemblyReference
 	{
-		public AssemblyReference()
-		{
-		}
+		
 	}
 }
 

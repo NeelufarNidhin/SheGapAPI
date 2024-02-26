@@ -8,14 +8,24 @@ namespace Repository
         private readonly RepositoryContext _repositoryContext;
         private readonly Lazy<IUserRepository> _userRepository;
         private readonly Lazy<IEmployeeRepository> _employeeRepository;
+
         private readonly Lazy<IEmployerRepository> _employerRepository;
-        public RepositoryManager(RepositoryContext repositoryContext)
+    
+
+
+		public RepositoryManager(RepositoryContext repositoryContext)
+
 		{
             _repositoryContext = repositoryContext;
             _userRepository = new Lazy<IUserRepository>(() => new UserRepository(repositoryContext));
             _employeeRepository = new Lazy<IEmployeeRepository>(() => new EmployeeRepository(repositoryContext));
+
             _employerRepository = new Lazy<IEmployerRepository>(() => new EmployerRepository(repositoryContext));
         }
+
+
+		
+
 
         public IUserRepository User => _userRepository.Value;
 
