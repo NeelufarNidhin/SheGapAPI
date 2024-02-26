@@ -13,6 +13,7 @@ namespace Repository
 		}
 
 		public DbSet<User> User { get; set; }
+		public DbSet<Employer> Employers { get; set; }
 		
 	}
 }

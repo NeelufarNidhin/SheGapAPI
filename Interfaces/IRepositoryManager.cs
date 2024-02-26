@@ -5,8 +5,9 @@ namespace Interfaces
 	{
 		IUserRepository User { get; }
 		IEmployeeRepository Employee { get; }
+        IEmployerRepository Employer { get; }
 
-		void Save();
+        void Save();
 	}
 }
 
