@@ -5,6 +5,7 @@ namespace Service.Interfaces
 	{
 		IUserService UserService { get; }
 		IEmployeeService EmployeeService { get; }
-	}
+        IEmployerService EmployerService { get; }
+    }
 }
 
