@@ -12,7 +12,7 @@ namespace Repository.Configuration
 			builder.HasData(
 				new IdentityRole
 				{
-					Name = "Adminisratator",
+					Name = "Administrator",
 					NormalizedName = "ADMINISTRATOR"
 				},
 				new IdentityRole
