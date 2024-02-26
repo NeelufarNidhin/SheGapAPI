@@ -13,3 +13,5 @@
 /Users/neelufarnidhin/Projects/SheGapAPI/Service.Interfaces/obj/Debug/net7.0/ref/Service.Interfaces.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/Service.Interfaces/bin/Debug/net7.0/Shared.dll
 /Users/neelufarnidhin/Projects/SheGapAPI/Service.Interfaces/bin/Debug/net7.0/Shared.pdb
+/Users/neelufarnidhin/Projects/SheGapAPI/Service.Interfaces/bin/Debug/net7.0/Entities.dll
+/Users/neelufarnidhin/Projects/SheGapAPI/Service.Interfaces/bin/Debug/net7.0/Entities.pdb

@@ -9,12 +9,14 @@ namespace SheGapAPI
 	{
 		public MappingProfile()
 		{
+
 			CreateMap<User, UserDto>()
 				.ReverseMap();
 			CreateMap<Employee, EmployeeDto>().ReverseMap();
 			CreateMap<AddEmployeeDto, Employee>().ReverseMap();
 			CreateMap<UpdateEmployeeDto, Employee>().ReverseMap();
 		}
+
 	}
 }
 

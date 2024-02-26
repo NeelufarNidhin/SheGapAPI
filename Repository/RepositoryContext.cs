@@ -6,13 +6,15 @@ using Shared.DTO;
 
 namespace Repository
 {
-	public class RepositoryContext : IdentityDbContext<ApplicationUser>
+	public class RepositoryContext : IdentityDbContext<User>
 	{
 		public RepositoryContext(DbContextOptions  options) :base(options)
 		{
 		}
 
-		public DbSet<UserDto> ApplicationUser { get; set; }
+		public DbSet<User> User { get; set; }
+		public DbSet<Employee> Employees { get; set; }
+		
 	}
 }
 

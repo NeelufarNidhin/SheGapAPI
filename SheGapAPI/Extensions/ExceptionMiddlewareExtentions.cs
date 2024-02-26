@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Net;
+using Entities;
+
+using Entities;
+
 using Entities.ErrorModel;
 using Interfaces;
 using Microsoft.AspNetCore.Diagnostics;
@@ -27,6 +31,14 @@ namespace SheGapAPI.Extensions
 					var contextFeature = context.Features.Get  <IExceptionHandlerFeature>();
 					if(contextFeature != null)
 					{
+
+						context.Response.StatusCode = contextFeature.Error switch
+						{
+							NotFoundException => StatusCodes.Status404NotFound,
+							_ => StatusCodes.Status500InternalServerError
+						};
+
+
 						//logging details into log file
 						logger.LogError($"Something went wrong: {contextFeature.Error}");
 
