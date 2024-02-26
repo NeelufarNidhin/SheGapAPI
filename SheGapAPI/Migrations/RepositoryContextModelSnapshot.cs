@@ -22,37 +22,71 @@ namespace SheGapAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+<<<<<<< HEAD
             modelBuilder.Entity("Entities.Models.Employer", b =>
+=======
+            modelBuilder.Entity("Entities.Models.Employee", b =>
+>>>>>>> EmployeeImplementation
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
+<<<<<<< HEAD
                         .HasColumnName("EmployerId");
 
                     b.Property<string>("CompanyName")
+=======
+                        .HasColumnName("EmployeeId");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+>>>>>>> EmployeeImplementation
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
+<<<<<<< HEAD
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Location")
+=======
+                    b.Property<bool>("CreatedStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MobileNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+>>>>>>> EmployeeImplementation
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+<<<<<<< HEAD
                     b.Property<string>("Website")
                         .HasColumnType("nvarchar(max)");
 
+=======
+>>>>>>> EmployeeImplementation
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
+<<<<<<< HEAD
                     b.ToTable("Employers");
+=======
+                    b.ToTable("Employees");
+>>>>>>> EmployeeImplementation
                 });
 
             modelBuilder.Entity("Entities.Models.User", b =>
@@ -273,7 +307,11 @@ namespace SheGapAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("Entities.Models.Employer", b =>
+=======
+            modelBuilder.Entity("Entities.Models.Employee", b =>
+>>>>>>> EmployeeImplementation
                 {
                     b.HasOne("Entities.Models.User", "User")
                         .WithMany()
