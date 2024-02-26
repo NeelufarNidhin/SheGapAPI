@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NTDDJ6MBRTjGhseX7Pyhb0k2UsdU60+cPWRVl59qTkQzifbSD6us5waAgJMY0K17NildKeYSYonwJATntJl9Vg==",
+  "dgSpecHash": "qxf6rNONIM1rbDJlTDTBhmYPQOCdrQg83EosxZ9ybERO7yt8LbbUp56nftPOkt71ehAJzWDrLXGFdn92Ie23Fg==",
   "success": true,
   "projectFilePath": "/Users/neelufarnidhin/Projects/SheGapAPI/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -30,16 +30,14 @@
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.objectpool/2.2.0/microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.identitymodel.abstractions/7.0.1/microsoft.identitymodel.abstractions.7.0.1.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.0.1/microsoft.identitymodel.jsonwebtokens.7.0.1.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.identitymodel.logging/7.0.1/microsoft.identitymodel.logging.7.0.1.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.identitymodel.tokens/7.0.1/microsoft.identitymodel.tokens.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/system.identitymodel.tokens.jwt/7.0.1/system.identitymodel.tokens.jwt.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/neelufarnidhin/Projects/SheGapAPI/Services/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

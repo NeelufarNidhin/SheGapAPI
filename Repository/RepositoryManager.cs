@@ -10,8 +10,12 @@ namespace Repository
         private readonly Lazy<IEmployeeRepository> _employeeRepository;
 
         private readonly Lazy<IEmployerRepository> _employerRepository;
+<<<<<<< HEAD
     
 
+=======
+      
+>>>>>>> userAuth
 
 		public RepositoryManager(RepositoryContext repositoryContext)
 
@@ -23,9 +27,12 @@ namespace Repository
             _employerRepository = new Lazy<IEmployerRepository>(() => new EmployerRepository(repositoryContext));
         }
 
+<<<<<<< HEAD
 
 		
 
+=======
+>>>>>>> userAuth
 
         public IUserRepository User => _userRepository.Value;
 
