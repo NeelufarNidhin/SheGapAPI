@@ -19,6 +19,7 @@ namespace SheGapAPI
             CreateMap<Employer, EmployerDto>().ReverseMap();
             CreateMap<AddEmployerDto, Employer>().ReverseMap();
             CreateMap<UpdateEmployerDto, Employer>().ReverseMap();
+			CreateMap<UserRegistrationDto, User>().ReverseMap();
         }
 
 	}

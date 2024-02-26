@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 using Shared.DTO;
@@ -6,6 +7,7 @@ using Shared.DTO;
 namespace SheGapAPI.Presentation.Controllers
 {
 	[Route("api/[controller]")]
+	[Authorize]
 	[ApiController]
 	public class EmployeeController : ControllerBase
 	{
