@@ -2,6 +2,7 @@
 using Entities.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Repository.Configuration;
 using Shared.DTO;
 
 namespace Repository
@@ -12,12 +13,18 @@ namespace Repository
 		{
 		}
 
-		public DbSet<User> User { get; set; }
-<<<<<<< HEAD
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+			builder.ApplyConfiguration(new RoleConfiguration());
+        }
+
+        public DbSet<User> User { get; set; }
+
 		public DbSet<Employer> Employers { get; set; }
-=======
+
 		public DbSet<Employee> Employees { get; set; }
->>>>>>> EmployeeImplementation
+
 		
 	}
 }
