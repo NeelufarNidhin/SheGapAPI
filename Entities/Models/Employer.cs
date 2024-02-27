@@ -17,6 +17,7 @@ namespace Entities.Models
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
 
         //Navigation
+        [ForeignKey(nameof(User))]
         public string UserId { get; set; }
         public User User { get; set; }
     }

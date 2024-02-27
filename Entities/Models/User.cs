@@ -16,6 +16,9 @@ namespace Entities.Models
 
         [Required(ErrorMessage = "Role is a required !!")]
         public string Role { get; set; }
+
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
         public bool IsBlocked { get; set; }
         public bool IsProfile { get; set; }
     }

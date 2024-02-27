@@ -30,9 +30,9 @@ namespace Repository
             Update(employee);
         }
 
-        public async Task<Employee> GetEmployeeById(Guid employeeId, bool trackChanges)
+        public Employee GetEmployeeById(Guid employeeId, bool trackChanges)
         {
-            return await FindByCondition(c => c.Id.Equals(employeeId), trackChanges).SingleOrDefaultAsync();
+            return FindByCondition(c => c.Id.Equals(employeeId), trackChanges).SingleOrDefault();
         }
     }
 }

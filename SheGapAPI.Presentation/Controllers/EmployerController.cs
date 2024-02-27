@@ -37,7 +37,7 @@ namespace SheGapAPI.Presentation.Controllers
             return CreatedAtRoute("EmployerById", new { id = createEmployer.Id }, createEmployer);
         }
 
-        [HttpGet("{id:guid}")]
+        [HttpGet("{id:guid}", Name = "EmployerById")]
         public async Task<IActionResult> GetEmployerById(Guid id)
         {
             var employer = _service.EmployerService.GetEmployerById(id, trackChanges: false);

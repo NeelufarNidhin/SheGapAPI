@@ -20,9 +20,9 @@ namespace Repository
            .ToListAsync();
         }
 
-        public async Task<Employer> GetEmployerById(Guid employerId, bool trackChanges)
+        public  Employer GetEmployerById(Guid employerId, bool trackChanges)
         {
-            return await FindByCondition(c => c.Id.Equals(employerId), trackChanges).SingleOrDefaultAsync();
+            return  FindByCondition(c => c.Id.Equals(employerId), trackChanges).SingleOrDefault();
         }
 
         public void CreateEmployer(Employer employer)

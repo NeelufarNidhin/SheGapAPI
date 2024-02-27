@@ -7,21 +7,16 @@ using Microsoft.AspNetCore.Http;
 namespace Shared.DTO
 {
 	public record EmployeeDto
-	{
-        public Guid Id { get; set; }
+	(
+      Guid Id ,
+      string UserId,
+      string State ,
+      string Country ,
+      int MobileNumber ,
+      string Bio ,
+      string ImageName 
        
-        public string State { get; set; }
-        public string Country { get; set; }      
-        public int MobileNumber { get; set; }
-        public string Bio { get; set; }
-        public string ImageName { get; set; }
        
-        //Navigation
-        public User User { get; set; }
-        public string UserId { get; set; }
-
-        [NotMapped]
-        public IFormFile Imagefile { get; set; }
-    }
+    );
 }
 
