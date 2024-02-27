@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qxf6rNONIM1rbDJlTDTBhmYPQOCdrQg83EosxZ9ybERO7yt8LbbUp56nftPOkt71ehAJzWDrLXGFdn92Ie23Fg==",
+  "dgSpecHash": "Tebvxvl1dkwzo7iYX1GDENdlLAGQWvLDwl5bOXo7sq4RVsZfxFYkBhAEA0blMAOkaskpivR9jEFAEadSOX8tGg==",
   "success": true,
   "projectFilePath": "/Users/neelufarnidhin/Projects/SheGapAPI/Services/Services.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.configuration.binder/7.0.1/microsoft.extensions.configuration.binder.7.0.1.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "/Users/neelufarnidhin/.nuget/packages/microsoft.extensions.identity.core/7.0.1/microsoft.extensions.identity.core.7.0.1.nupkg.sha512",

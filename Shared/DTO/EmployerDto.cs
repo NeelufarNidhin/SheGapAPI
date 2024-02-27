@@ -17,7 +17,7 @@ namespace Shared.DTO
 
         //Navigation
         public string UserId { get; set; }
-        public User User { get; set; }
+       
     }
 }
 

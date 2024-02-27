@@ -7,7 +7,7 @@ using Shared.DTO;
 namespace SheGapAPI.Presentation.Controllers
 {
 	[Route("api/[controller]")]
-	[Authorize]
+	
 	[ApiController]
 	public class EmployeeController : ControllerBase
 	{
@@ -31,14 +31,15 @@ namespace SheGapAPI.Presentation.Controllers
 		{
 			if (employeeDto is null)
 			{
-				return BadRequest("UserDto is null");
+				return BadRequest("EmployeeDto is null");
 			}
 
-			var createEmployee = _service.EmployeeService.CreateEmployee(employeeDto);
-			return CreatedAtRoute("EmployerById", new { id = createEmployee.Id }, createEmployee);
-		}
+			var createEmployee =  _service.EmployeeService.CreateEmployee(employeeDto);
+		   return CreatedAtRoute("EmployeeById", new { id = createEmployee.Id }, createEmployee);
+			//return StatusCode(201);
+        }
 
-		[HttpGet("{id:guid}")]
+		[HttpGet("{id:guid}" , Name = "EmployeeById")]
 		public async Task<IActionResult> GetEmployeeById(Guid id)
 		{
 			var employee = _service.EmployeeService.GetEmployeeById(id, trackChanges: false);
