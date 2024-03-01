@@ -18,6 +18,7 @@ namespace Repository
 		public DbSet<JobSeeker> JobSeekers { get; set; }
 		public DbSet<Country> Countries { get; set; }
         public DbSet<Employer> Employers { get; set; }
+        public DbSet<Education> Education { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
