@@ -4,7 +4,7 @@ namespace Interfaces
 	public interface IRepositoryManager
 	{
 		IUserRepository User { get; }
-		IEmployeeRepository Employee { get; }
+		IJobSeekerRepository JobSeeker { get; }
 
 		void Save();
 	}

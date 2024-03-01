@@ -1,18 +1,22 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Metrics;
 using Microsoft.AspNetCore.Http;
 
 namespace Entities.Models
 {
-	public class Employee
+	public class JobSeeker
 	{
-        [Column("EmployeeId")]
+        [Column("JobSeekerId")]
         public Guid Id { get; set; }
-        [Required(ErrorMessage = "This field is a required !!")]
-        public string State { get; set; }
-        [Required(ErrorMessage = "This field is a required !!")]
-        public string Country { get; set; }
+        [Required(ErrorMessage = "City is a required !!")]
+        public string City { get; set; }
+
+        [Required(ErrorMessage = "Country is a required !!")]
+        public int CountryId { get; set; } // Foreign key referencing Countries table
+        public Country Country { get; set; }
+       
         [Required(ErrorMessage = "Mobile Number is a required !!")]
         [MinLength(10, ErrorMessage = "Please enter 10 digit valid mobile number")]
         public int MobileNumber { get; set; }
@@ -22,8 +26,9 @@ namespace Entities.Models
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
 
         //Navigation
-        [ForeignKey(nameof(User))]
+       
         public string UserId { get; set; }
+        [ForeignKey(nameof(User))]
         public User? User { get; set; }
 
         [NotMapped]

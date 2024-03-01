@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Http;
 
 namespace Shared.DTO
 {
-	public record EmployeeDto
-	{
+	public record JobSeekerDto
+    {
         public Guid Id { get; set; }
        
-        public string State { get; set; }
-        public string Country { get; set; }      
+        public string City { get; set; }
+        public int CountryId { get; set; }
         public int MobileNumber { get; set; }
         public string Bio { get; set; }
         public string ImageName { get; set; }
