@@ -5,16 +5,16 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Repository.Configuration
 {
-    public class JobSeekerConfiguration : IEntityTypeConfiguration<JobSeeker>
+    public class CountryConfiguration : IEntityTypeConfiguration<Country>
     {
-        public void Configure(EntityTypeBuilder<JobSeeker> builder)
+        public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.HasData(
 
                 new Country
                 {
-                   Id = 1,
-                   Name = "Australia"
+                   Id =1 ,
+                    Name = "Australia"
                 },
                  new Country
                  {
@@ -23,21 +23,21 @@ namespace Repository.Configuration
                  },
                   new Country
                   {
-                      Id = 3,
+                     Id =3,
                       Name = "Bangladesh"
                   }, new Country
                   {
-                      Id = 4,
+                      Id=4,
                       Name = "Bahrain"
                   },
                    new Country
                    {
-                       Id = 5,
+                      Id=5,
                        Name = "China"
                    },
                     new Country
                     {
-                        Id = 6,
+                       Id=6,
                         Name = "Germany"
                     },
                     new Country

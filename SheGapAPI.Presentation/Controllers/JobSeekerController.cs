@@ -33,11 +33,13 @@ namespace SheGapAPI.Presentation.Controllers
 				return BadRequest("UserDto is null");
 			}
 
-			var createJobSeeker = _service.JobSeekerService.CreateJobSeeker(jobSeekerDto);
+			var createJobSeeker =  _service.JobSeekerService.CreateJobSeeker(jobSeekerDto);
 			return CreatedAtRoute("JobSeekerById", new { id = createJobSeeker.Id }, createJobSeeker);
-		}
+			//return StatusCode(201);
 
-		[HttpGet("{id:guid}")]
+        }
+
+		[HttpGet("{id:guid}", Name = "JobSeekerById")]
 		public async Task<IActionResult> GetJobSeekerById(Guid id)
 		{
 			var jobSeeker = _service.JobSeekerService.GetJobSeekerById(id, trackChanges: false);
@@ -51,6 +53,11 @@ namespace SheGapAPI.Presentation.Controllers
 			{
 				return BadRequest("JobSeeker is Null");
             }
+
+			if (!ModelState.IsValid)
+			{
+				return UnprocessableEntity(ModelState);
+			}
 
 			_service.JobSeekerService.UpdateJobSeeker(jobSeekerId, jobSeekerDto, trackChanges: true);
 

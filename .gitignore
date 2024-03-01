@@ -75,7 +75,7 @@ LoggerService/bin/Debug/net7.0/LoggerService.dll
 LoggerService/obj/Debug/net7.0/LoggerService.csproj.AssemblyReference.cache
 LoggerService/obj/Debug/net7.0/LoggerService.pdb
 
-"SheGapAPI/.\\internal_logs\\internallog.txt
+SheGapAPI/.\\internal_logs\\internallog.txt
 
 # globs
 Makefile.in

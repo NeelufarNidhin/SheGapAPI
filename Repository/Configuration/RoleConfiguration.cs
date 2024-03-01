@@ -22,8 +22,8 @@ namespace Repository.Configuration
 				},
 				new IdentityRole
 				{
-					Name = "Employee",
-					NormalizedName = "Employee"
+					Name = "JobSeeker",
+					NormalizedName = "JOBSEEKER"
 				});
 
 		}

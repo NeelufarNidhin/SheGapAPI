@@ -22,44 +22,67 @@ namespace SheGapAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Entities.Models.Employee", b =>
+            modelBuilder.Entity("Entities.Models.Country", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("EmployeeId");
-
-                    b.Property<string>("Bio")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("CreatedStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MobileNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.ToTable("Countries");
 
-                    b.ToTable("Employees");
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Australia"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Azerbaijan"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Bangladesh"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Bahrain"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "China"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Germany"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "India"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "United States of America"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "United Arab Emirates"
+                        });
                 });
 
             modelBuilder.Entity("Entities.Models.Employer", b =>
@@ -93,6 +116,48 @@ namespace SheGapAPI.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Employers");
+                });
+
+            modelBuilder.Entity("Entities.Models.JobSeeker", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("JobSeekerId");
+
+                    b.Property<string>("Bio")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("CreatedStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MobileNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("JobSeekers");
                 });
 
             modelBuilder.Entity("Entities.Models.User", b =>
@@ -215,21 +280,21 @@ namespace SheGapAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c76190b4-babf-4c22-b473-eeb8ca105dfd",
+                            Id = "5fd7e045-fba1-47f4-976e-d60095fb1748",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "1bd581ca-fcd1-4c34-8602-ca287852b0fd",
+                            Id = "28479c4e-39fe-45ff-a472-1dd39fbd0284",
                             Name = "Employer",
                             NormalizedName = "EMPLOYER"
                         },
                         new
                         {
-                            Id = "b2f56c5d-e6a2-4604-8f8d-792502be30ca",
-                            Name = "Employee",
-                            NormalizedName = "Employee"
+                            Id = "378ab8b8-3ded-4d1c-9f7f-1cfe086ad9f5",
+                            Name = "JobSeeker",
+                            NormalizedName = "JOBSEEKER"
                         });
                 });
 
@@ -339,7 +404,7 @@ namespace SheGapAPI.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Entities.Models.Employee", b =>
+            modelBuilder.Entity("Entities.Models.Employer", b =>
                 {
                     b.HasOne("Entities.Models.User", "User")
                         .WithMany()
@@ -348,11 +413,19 @@ namespace SheGapAPI.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entities.Models.Employer", b =>
+            modelBuilder.Entity("Entities.Models.JobSeeker", b =>
                 {
+                    b.HasOne("Entities.Models.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entities.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
+
+                    b.Navigation("Country");
 
                     b.Navigation("User");
                 });

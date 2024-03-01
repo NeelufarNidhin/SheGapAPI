@@ -19,16 +19,16 @@ namespace Entities.Models
        
         [Required(ErrorMessage = "Mobile Number is a required !!")]
         [MinLength(10, ErrorMessage = "Please enter 10 digit valid mobile number")]
-        public int MobileNumber { get; set; }
+        public string MobileNumber { get; set; }
         public string Bio { get; set; }
         public string ImageName { get; set; }
         public bool CreatedStatus { get; set; } = false;
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
 
         //Navigation
-       
-        public string UserId { get; set; }
         [ForeignKey(nameof(User))]
+        public string UserId { get; set; }
+       
         public User? User { get; set; }
 
         [NotMapped]

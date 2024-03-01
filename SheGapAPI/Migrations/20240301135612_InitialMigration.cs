@@ -35,6 +35,8 @@ namespace SheGapAPI.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RefreshTokenExpiryTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsBlocked = table.Column<bool>(type: "bit", nullable: false),
                     IsProfile = table.Column<bool>(type: "bit", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -55,6 +57,19 @@ namespace SheGapAPI.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Countries",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Countries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,30 +179,6 @@ namespace SheGapAPI.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Employees",
-                columns: table => new
-                {
-                    EmployeeId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MobileNumber = table.Column<int>(type: "int", nullable: false),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedStatus = table.Column<bool>(type: "bit", nullable: false),
-                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Employees", x => x.EmployeeId);
-                    table.ForeignKey(
-                        name: "FK_Employees_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Employers",
                 columns: table => new
                 {
@@ -209,14 +200,60 @@ namespace SheGapAPI.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "JobSeekers",
+                columns: table => new
+                {
+                    JobSeekerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
+                    MobileNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedStatus = table.Column<bool>(type: "bit", nullable: false),
+                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_JobSeekers", x => x.JobSeekerId);
+                    table.ForeignKey(
+                        name: "FK_JobSeekers_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_JobSeekers_Countries_CountryId",
+                        column: x => x.CountryId,
+                        principalTable: "Countries",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "217c134d-73e6-4de6-96b2-6d40891e2d4c", null, "Administrator", "ADMINISTRATOR" },
-                    { "7757212e-b644-4c86-a9c5-d82ea5504653", null, "Employer", "EMPLOYER" },
-                    { "b713fcfc-e2c3-4164-b362-12910320850c", null, "Employee", "Employee" }
+                    { "28479c4e-39fe-45ff-a472-1dd39fbd0284", null, "Employer", "EMPLOYER" },
+                    { "378ab8b8-3ded-4d1c-9f7f-1cfe086ad9f5", null, "JobSeeker", "JOBSEEKER" },
+                    { "5fd7e045-fba1-47f4-976e-d60095fb1748", null, "Administrator", "ADMINISTRATOR" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Australia" },
+                    { 2, "Azerbaijan" },
+                    { 3, "Bangladesh" },
+                    { 4, "Bahrain" },
+                    { 5, "China" },
+                    { 6, "Germany" },
+                    { 7, "India" },
+                    { 8, "United States of America" },
+                    { 9, "United Arab Emirates" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -259,13 +296,18 @@ namespace SheGapAPI.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employees_UserId",
-                table: "Employees",
+                name: "IX_Employers_UserId",
+                table: "Employers",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Employers_UserId",
-                table: "Employers",
+                name: "IX_JobSeekers_CountryId",
+                table: "JobSeekers",
+                column: "CountryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_JobSeekers_UserId",
+                table: "JobSeekers",
                 column: "UserId");
         }
 
@@ -288,16 +330,19 @@ namespace SheGapAPI.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Employees");
+                name: "Employers");
 
             migrationBuilder.DropTable(
-                name: "Employers");
+                name: "JobSeekers");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Countries");
         }
     }
 }

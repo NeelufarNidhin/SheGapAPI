@@ -53,6 +53,11 @@ namespace SheGapAPI.Presentation.Controllers
 
             }
 
+            if (!ModelState.IsValid)
+            {
+                return UnprocessableEntity(ModelState);
+            }
+
             _service.EmployerService.UpdateEmployer(employerId, employerDto, trackChanges: true);
 
             return NoContent();

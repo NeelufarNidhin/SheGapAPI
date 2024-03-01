@@ -13,28 +13,19 @@ namespace Repository
 		{
 		}
 
-<<<<<<< HEAD
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
-			builder.ApplyConfiguration(new RoleConfiguration());
-        }
-
-        public DbSet<User> User { get; set; }
-
-		public DbSet<Employer> Employers { get; set; }
-
-		public DbSet<Employee> Employees { get; set; }
-
-		
-	}
-=======
+       
 		public DbSet<User> User { get; set; }
 		public DbSet<JobSeeker> JobSeekers { get; set; }
 		public DbSet<Country> Countries { get; set; }
+        public DbSet<Employer> Employers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+
             modelBuilder.Entity<JobSeeker>()
                 .HasOne(e => e.Country)
                 .WithMany()
@@ -42,6 +33,6 @@ namespace Repository
         }
 
     }
->>>>>>> JobSeekerImplementation
+
 }
 

@@ -21,10 +21,10 @@ namespace Services
             _mapper = mapper;
         }
 
-        public JobSeekerDto CreateJobSeeker(AddJobSeekerDto addjobSeekerDto)
+        public  JobSeekerDto CreateJobSeeker(AddJobSeekerDto addjobSeekerDto)
         {
-            var jobSeekerEntity = _mapper.Map<JobSeeker>(addjobSeekerDto);
-            _repository.JobSeeker.CreateJobSeeker(jobSeekerEntity);
+            var jobSeekerEntity =  _mapper.Map<JobSeeker>(addjobSeekerDto);
+             _repository.JobSeeker.CreateJobSeeker(jobSeekerEntity);
             _repository.Save();
 
             var jobSeekerToReturn = _mapper.Map<JobSeekerDto>(jobSeekerEntity);
