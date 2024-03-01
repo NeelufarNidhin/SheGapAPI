@@ -9,6 +9,7 @@ namespace Interfaces
         IEmployerRepository Employer { get; }
 
 		IJobSeekerRepository JobSeeker { get; }
+		IEducationRepository Education { get; }
 
 
         void Save();

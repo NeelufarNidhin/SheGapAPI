@@ -20,10 +20,10 @@ namespace SheGapAPI
 	
 
 			CreateMap<UserRegistrationDto, User>().ReverseMap();
-        
-
-
-			CreateMap<JobSeeker, JobSeekerDto>().ReverseMap();
+            CreateMap<Education, EducationDto>().ReverseMap();
+            CreateMap<AddEducationDto, Education>().ReverseMap();
+            CreateMap<UpdateEducationDto, Education>().ReverseMap();
+            CreateMap<JobSeeker, JobSeekerDto>().ReverseMap();
 			CreateMap<AddJobSeekerDto, JobSeeker>().ReverseMap();
 			CreateMap<UpdateJobSeekerDto, JobSeeker>().ReverseMap();
 		}
