@@ -8,6 +8,7 @@ namespace Service.Interfaces
 		IAuthenticationService AuthenticationService { get; }
 		IEducationService EducationService { get; }
 		IJobSeekerService JobSeekerService { get; }
+
 	}
 
 }

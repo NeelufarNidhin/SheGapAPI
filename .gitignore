@@ -1,79 +1,39 @@
 
-Repository/bin/Debug/net7.0/*.dll
-Repository/bin/Debug/net7.0/*.pdb
-
-Repository/obj/Debug/net7.0/*.pdb
-Repository/obj/Debug/net7.0/*.dll
-
-Entities/bin/Debug/net7.0/*.dll
-Entities/bin/Debug/net7.0/*.pdb
-
-Entities/obj/Debug/net7.0/*.dll
-Entities/bin/Debug/net7.0/ref/*.dll
-Entities/obj/Debug/net7.0/*.pdb
-
-Interfaces/bin/Debug/net7.0/*.dll
-Interfaces/obj/Debug/net7.0/*.dll
-Interfaces/bin/Debug/net7.0/*.pdb
-Interfaces/obj/Debug/net7.0/*.pdb
-
-Shared/bin/Debug/net7.0/*.dll
-Shared/obj/Debug/net7.0/*.dll
-Shared/bin/Debug/net7.0/*.pdb
-Shared/obj/Debug/net7.0/*.pdb
+Repository/bin/*
+Repository/obj/*
 
 
-Services/bin/Debug/net7.0/*.dll
-Services/bin/Debug/net7.0/*.pdb
 
-Services/obj/Debug/net7.0/*.dll
-Services/obj/Debug/net7.0/*.pdb
-
-Service.Interfaces/bin/Debug/net7.0/*.dll
-Service.Interfaces/bin/Debug/net7.0/*.pdb
-
-Service.Interfaces/obj/Debug/net7.0/*.dll
-Service.Interfaces/obj/Debug/net7.0/*.pdb
-Services/obj/Debug/net7.0/Services.csproj.AssemblyReference.cache
-
-LoggerService/bin/Debug/net7.0/*.pdb
-LoggerService/bin/Debug/net7.0/*.dll
-
-LoggerService/obj/Debug/net7.0/*.dll
-LoggerService/obj/Debug/net7.0/*.pdb
+Entities/bin/*
+Entities/obj/*
 
 
-Service.Interfaces/bin/Debug/net7.0/Shared.dll
-Service.Interfaces/bin/Debug/net7.0/Shared.pdb
-Service.Interfaces/obj/Debug/net7.0/Service.Interfaces.pdb
-Service.Interfaces/obj/Debug/net7.0/Service.Interfaces.dll
-Service.Interfaces/bin/Debug/net7.0/Service.Interfaces.pdb
-Service.Interfaces/bin/Debug/net7.0/Service.Interfaces.dll 
-Service.Interfaces/obj/Debug/net7.0/Service.Interfaces.csproj.AssemblyReference.cache
+Interfaces/bin/*
+Interfaces/obj/*
 
-SheGapAPI.Presentation/obj/Debug/net7.0/SheGapAPI.Presentation.csproj.AssemblyReference.cache
-SheGapAPI.Presentation/bin/Debug/net7.0/SheGapAPI.Presentation.pdb
-SheGapAPI.Presentation/bin/Debug/net7.0/Shared.pdb
-SheGapAPI.Presentation/bin/Debug/net7.0/Shared.dll
-SheGapAPI.Presentation/bin/Debug/net7.0/Service.Interfaces.pdb
-SheGapAPI.Presentation/bin/Debug/net7.0/Service.Interfaces.dll
 
-Shared/obj/Debug/net7.0/Shared.pdb
-Shared/obj/Debug/net7.0/Shared.dll
-Shared/bin/Debug/net7.0/Shared.pdb
-Shared/bin/Debug/net7.0/Shared.dll
-Shared/obj/Debug/net7.0/Shared.csproj.AssemblyReference.cache
+Shared/bin/*
+Shared/obj/*
 
-Interfaces/bin/Debug/net7.0/Interfaces.dll
-Interfaces/bin/Debug/net7.0/Interfaces.pdb
-Interfaces/obj/Debug/net7.0/Interfaces.csproj.AssemblyReference.cache
 
-LoggerService/bin/Debug/net7.0/Interfaces.dll
-LoggerService/bin/Debug/net7.0/Interfaces.pdb
-LoggerService/bin/Debug/net7.0/LoggerService.pdb
-LoggerService/bin/Debug/net7.0/LoggerService.dll
-LoggerService/obj/Debug/net7.0/LoggerService.csproj.AssemblyReference.cache
-LoggerService/obj/Debug/net7.0/LoggerService.pdb
+Services/obj/*
+Services/obj/*
+
+
+
+Service.Interfaces/bin/*
+Service.Interfaces/obj/*
+
+
+
+LoggerService/bin/*
+LoggerService/obj/*
+
+
+SheGapAPI.Presentation/obj/*
+SheGapAPI.Presentation/bin/*
+
+
 
 SheGapAPI/.\\internal_logs\\internallog.txt
 
