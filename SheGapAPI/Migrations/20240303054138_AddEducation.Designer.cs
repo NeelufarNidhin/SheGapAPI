@@ -12,8 +12,8 @@ using Repository;
 namespace SheGapAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240301223539_AddEducationTable")]
-    partial class AddEducationTable
+    [Migration("20240303054138_AddEducation")]
+    partial class AddEducation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -105,15 +105,15 @@ namespace SheGapAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FieldOfStudy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("GraduationYear")
                         .HasColumnType("int");
 
                     b.Property<Guid>("JobSeekerId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -317,19 +317,19 @@ namespace SheGapAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1d63e6c3-3594-49ba-92d4-8172e6622707",
+                            Id = "ea9ae356-3978-42a3-acc7-4026464528e7",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "cc9a2901-8a0d-4d0d-aec0-7cebd40d2112",
+                            Id = "553529bc-9544-4878-885c-f9fb04c4d484",
                             Name = "Employer",
                             NormalizedName = "EMPLOYER"
                         },
                         new
                         {
-                            Id = "b9f78707-98fa-46cc-96f8-f1a7c0a12c1c",
+                            Id = "afb88c0b-5bec-4d0c-a4b5-9d3dd5ddf429",
                             Name = "JobSeeker",
                             NormalizedName = "JOBSEEKER"
                         });

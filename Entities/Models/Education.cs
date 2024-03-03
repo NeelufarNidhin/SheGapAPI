@@ -9,9 +9,9 @@ namespace Entities.Models
         public Guid Id { get; set; }
         [Required(ErrorMessage = "Degree is a required !!")]
         public string Degree { get; set; }
-        [Required(ErrorMessage = "Degree is a required !!")]
-        public string Subject { get; set; }
-        [Required(ErrorMessage = "Degree is a required !!")]
+        [Required(ErrorMessage = "FiledOfStudy is a required !!")]
+        public string FieldOfStudy { get; set; }
+        [Required(ErrorMessage = "College is a required !!")]
         public string College { get; set; }
         public int GraduationYear{ get; set; }
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;

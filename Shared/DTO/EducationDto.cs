@@ -5,21 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shared.DTO
 {
-	public class EducationDto
-	{
-        public Guid Id { get; set; }
-        [Required(ErrorMessage = "Degree is a required !!")]
-        public string Degree { get; set; }
-        [Required(ErrorMessage = "Degree is a required !!")]
-        public string Subject { get; set; }
-        [Required(ErrorMessage = "Degree is a required !!")]
-        public string College { get; set; }
-        public int GraduationYear { get; set; }
-       
-
-     
-        public Guid JobSeekerId { get; set; }
-      
-    }
+	public record EducationDto
+	(
+        Guid Id, Guid JobSeekerId, string Degree, string FiledOfStudy, string College, int GraduationYear
+    );
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
