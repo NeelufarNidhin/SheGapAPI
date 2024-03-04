@@ -31,9 +31,9 @@ namespace Services
             return employerToReturn;
         }
          
-        public async Task<IEnumerable<EmployerDto>> GetAllEmployers(bool trackChanges)
+        public async Task< IEnumerable<EmployerDto>> GetAllEmployers(bool trackChanges)
         {
-            var employers = await _repository.Employer.GetAllEmployers(trackChanges);
+            var employers =  _repository.Employer.GetAllEmployers(trackChanges);
             var employerDto = _mapper.Map<IEnumerable<EmployerDto>>(employers);
             return employerDto;
         }

@@ -5,7 +5,7 @@ namespace Interfaces
 {
 	public interface IEmployerRepository
 	{
-        Task<IEnumerable<Employer>> GetAllEmployers(bool trackChanges);
+        IEnumerable<Employer> GetAllEmployers(bool trackChanges);
         Employer GetEmployerById(Guid employerId, bool trackChanges);
         void CreateEmployer(Employer employer);
         void UpdateEmployer(Employer employer);

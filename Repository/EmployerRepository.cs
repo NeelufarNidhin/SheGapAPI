@@ -1,7 +1,7 @@
 ﻿using System;
 using Entities.Models;
 using Interfaces;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace Repository
 {
@@ -13,11 +13,10 @@ namespace Repository
 
        
 
-        public async Task<IEnumerable<Employer>> GetAllEmployers(bool trackChanges)
+        public IEnumerable<Employer> GetAllEmployers(bool trackChanges)
         {
-            return await FindAll(trackChanges)
-           .OrderBy(c => c.CompanyName)
-           .ToListAsync();
+            return  FindAll(trackChanges)
+           .OrderBy(c => c.CompanyName).ToList();        
         }
 
         public  Employer GetEmployerById(Guid employerId, bool trackChanges)

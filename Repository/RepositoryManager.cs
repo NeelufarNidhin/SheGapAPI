@@ -10,7 +10,7 @@ namespace Repository
         private readonly Lazy<IJobSeekerRepository> _jobSeekerRepository;
         private readonly Lazy<IEducationRepository> _educationRepository;
         private readonly Lazy<IEmployerRepository> _employerRepository;
-
+        private readonly Lazy<IExperienceRepository> _experienceRepository;
 
 		public RepositoryManager(RepositoryContext repositoryContext)
 
@@ -20,6 +20,7 @@ namespace Repository
             _jobSeekerRepository = new Lazy<IJobSeekerRepository>(() => new JobSeekerRepository(repositoryContext));
             _educationRepository = new Lazy<IEducationRepository>(() =>  new EducationRepository(repositoryContext));
             _employerRepository = new Lazy<IEmployerRepository>(() => new EmployerRepository(repositoryContext));
+            _experienceRepository = new Lazy<IExperienceRepository>(() => new ExperienceRepository(repositoryContext));
         }
 
 
@@ -31,6 +32,8 @@ namespace Repository
         public IEmployerRepository Employer => _employerRepository.Value;
 
         public IEducationRepository Education => _educationRepository.Value;
+
+        public IExperienceRepository Experience => _experienceRepository.Value;
 
         public void Save()
         {

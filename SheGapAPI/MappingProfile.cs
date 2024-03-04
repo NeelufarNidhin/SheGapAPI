@@ -10,15 +10,11 @@ namespace SheGapAPI
 		public MappingProfile()
 		{
 
-			CreateMap<User, UserDto>()
-				.ReverseMap();
+			CreateMap<User, UserDto>().ReverseMap();
 
-
-			CreateMap<Employer, EmployerDto>().ReverseMap();
+            CreateMap<Employer, EmployerDto>().ReverseMap();
 			CreateMap<AddEmployerDto, Employer>().ReverseMap();
 			CreateMap<UpdateEmployerDto, Employer>().ReverseMap();
-	
-
 			CreateMap<UserRegistrationDto, User>().ReverseMap();
             CreateMap<Education, EducationDto>().ReverseMap();
             CreateMap<AddEducationDto, Education>().ReverseMap();
@@ -26,6 +22,10 @@ namespace SheGapAPI
             CreateMap<JobSeeker, JobSeekerDto>().ReverseMap();
 			CreateMap<AddJobSeekerDto, JobSeeker>().ReverseMap();
 			CreateMap<UpdateJobSeekerDto, JobSeeker>().ReverseMap();
+			CreateMap<Experience, ExperienceDto>().ReverseMap();
+			CreateMap<AddExperienceDto, Experience>().ReverseMap();
+			CreateMap<UpdateExperienceDto, Experience>().ReverseMap();
+
 		}
 
 
