@@ -19,6 +19,7 @@ namespace Repository
 		public DbSet<Country> Countries { get; set; }
         public DbSet<Employer> Employers { get; set; }
         public DbSet<Education> Education { get; set; }
+        public DbSet<Experience> Experience { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

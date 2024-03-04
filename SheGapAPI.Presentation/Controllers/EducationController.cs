@@ -31,8 +31,8 @@ namespace SheGapAPI.Presentation.Controllers
                 return BadRequest("Education is null");
             }
 
-            var createEducation = _service.EducationService.CreateEducation(educationDto);
-            return CreatedAtRoute("EducationById", new { id = createEducation.Id }, createEducation);
+            var Education = _service.EducationService.CreateEducation(educationDto);
+            return CreatedAtRoute("EducationById", new { id = Education.Id }, Education);
         }
 
         [HttpGet("{id:guid}", Name = "EducationById")]

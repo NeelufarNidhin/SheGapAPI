@@ -1,5 +1,5 @@
 ﻿using System;
-using Entities.Models;
+
 using Shared.DTO;
 
 namespace Service.Interfaces

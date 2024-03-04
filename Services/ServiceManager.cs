@@ -15,6 +15,7 @@ namespace Services
 		private readonly Lazy<IJobSeekerService> _jobSeekerService;
         private readonly Lazy<IEmployerService> _employerService;
 		private readonly Lazy<IAuthenticationService> _authenticationService;
+		private readonly Lazy<IExperienceService> _experienceService;
 
         public ServiceManager( IRepositoryManager repositoryManager, ILoggerManager logger , IMapper mapper,
 			UserManager<User> userManager,IConfiguration configuration)
@@ -24,6 +25,8 @@ namespace Services
             _employerService = new Lazy<IEmployerService>(() => new EmployerService(repositoryManager, logger, mapper));
 			_authenticationService = new Lazy<IAuthenticationService>(() => new AuthenticationService(logger, mapper, userManager, configuration));
 			_educationService = new Lazy<IEducationService>(() => new EducationService(repositoryManager, logger, mapper));
+			_experienceService = new Lazy<IExperienceService>(() => new ExperienceService(repositoryManager, logger, mapper));
+				
         }
 
         public IUserService UserService => _userService.Value;
@@ -34,6 +37,7 @@ namespace Services
         public IJobSeekerService JobSeekerService => _jobSeekerService.Value;
 		public IEducationService EducationService => _educationService.Value;
 
+		public IExperienceService ExperienceService => _experienceService.Value;
     }
 }
 
