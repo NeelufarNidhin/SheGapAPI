@@ -16,14 +16,14 @@ namespace Repository
             Create(education);
         }
 
-        public async Task<IEnumerable<Education>> GetAllEducation(bool trackChanges)
+        public  IEnumerable<Education> GetAllEducation(bool trackChanges)
         {
-            return await FindAll(trackChanges)
+            return  FindAll(trackChanges)
            .OrderBy(c => c.College)
-           .ToListAsync();
+           .ToList();
         }
 
-        public async Task<Education> GetEducationById(Guid educationId, bool trackChanges)
+        public Education GetEducationById(Guid educationId, bool trackChanges)
         {
             return  FindByCondition(c => c.Id.Equals(educationId), trackChanges).SingleOrDefault();
         }

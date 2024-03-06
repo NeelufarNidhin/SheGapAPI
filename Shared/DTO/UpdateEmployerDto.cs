@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Shared.DTO
 {
-	public class UpdateEmployerDto
+	public record UpdateEmployerDto
 	{
         [Required(ErrorMessage = "Company Name is a required !!")]
         public string CompanyName { get; init; }

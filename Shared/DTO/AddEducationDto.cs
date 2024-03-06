@@ -11,13 +11,14 @@ namespace Shared.DTO
         public Guid JobSeekerId { get; set; }
 
         [Required(ErrorMessage = "Degree is a required !!")]
-        public string Degree { get; set; }
+        public string Degree { get; init; }
         [Required(ErrorMessage = "FieldOfStudy is a required !!")]
-        public string FiledOfStudy { get; set; }
+        public string FieldOfStudy { get; init; }
         [Required(ErrorMessage = "College is a required !!")]
-        public string College { get; set; }
-        public int GraduationYear { get; set; }
+        public string College { get; init; }
+        public string GraduationYear { get; set; }
        
     }
 }
+
 

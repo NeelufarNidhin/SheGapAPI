@@ -12,8 +12,8 @@ using Repository;
 namespace SheGapAPI.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20240303054138_AddEducation")]
-    partial class AddEducation
+    [Migration("20240306230147_AddEducationTable")]
+    partial class AddEducationTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -109,8 +109,8 @@ namespace SheGapAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GraduationYear")
-                        .HasColumnType("int");
+                    b.Property<string>("GraduationYear")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("JobSeekerId")
                         .HasColumnType("uniqueidentifier");
@@ -155,6 +155,102 @@ namespace SheGapAPI.Migrations
                     b.ToTable("Employers");
                 });
 
+            modelBuilder.Entity("Entities.Models.Experience", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("JobSeekerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("JobSeekerId");
+
+                    b.ToTable("Experience");
+                });
+
+            modelBuilder.Entity("Entities.Models.Job", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EmployerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("JobTypeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Location")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PostedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployerId");
+
+                    b.HasIndex("JobTypeId");
+
+                    b.ToTable("Job");
+                });
+
+            modelBuilder.Entity("Entities.Models.JobJobSkill", b =>
+                {
+                    b.Property<Guid>("JobId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("JobSkillId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("JobId", "JobSkillId");
+
+                    b.HasIndex("JobSkillId");
+
+                    b.ToTable("JobJobSkill");
+                });
+
             modelBuilder.Entity("Entities.Models.JobSeeker", b =>
                 {
                     b.Property<Guid>("Id")
@@ -175,9 +271,6 @@ namespace SheGapAPI.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("CreatedStatus")
-                        .HasColumnType("bit");
-
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
 
@@ -195,6 +288,42 @@ namespace SheGapAPI.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("JobSeekers");
+                });
+
+            modelBuilder.Entity("Entities.Models.JobSkill", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("JobSkillName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobSkill");
+                });
+
+            modelBuilder.Entity("Entities.Models.JobType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("JobTypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobType");
                 });
 
             modelBuilder.Entity("Entities.Models.User", b =>
@@ -317,19 +446,19 @@ namespace SheGapAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ea9ae356-3978-42a3-acc7-4026464528e7",
+                            Id = "557df7dd-3e54-43ea-9430-3c352c369465",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "553529bc-9544-4878-885c-f9fb04c4d484",
+                            Id = "42f09667-3826-419e-afed-579dff91528e",
                             Name = "Employer",
                             NormalizedName = "EMPLOYER"
                         },
                         new
                         {
-                            Id = "afb88c0b-5bec-4d0c-a4b5-9d3dd5ddf429",
+                            Id = "294db2d6-f4e5-4209-97a3-550a9bf4913e",
                             Name = "JobSeeker",
                             NormalizedName = "JOBSEEKER"
                         });
@@ -461,6 +590,55 @@ namespace SheGapAPI.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Entities.Models.Experience", b =>
+                {
+                    b.HasOne("Entities.Models.JobSeeker", "JobSeeker")
+                        .WithMany()
+                        .HasForeignKey("JobSeekerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("JobSeeker");
+                });
+
+            modelBuilder.Entity("Entities.Models.Job", b =>
+                {
+                    b.HasOne("Entities.Models.Employer", "Employer")
+                        .WithMany()
+                        .HasForeignKey("EmployerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.JobType", "JobType")
+                        .WithMany()
+                        .HasForeignKey("JobTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employer");
+
+                    b.Navigation("JobType");
+                });
+
+            modelBuilder.Entity("Entities.Models.JobJobSkill", b =>
+                {
+                    b.HasOne("Entities.Models.Job", "Job")
+                        .WithMany("JobJobSkill")
+                        .HasForeignKey("JobId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entities.Models.JobSkill", "JobSkill")
+                        .WithMany()
+                        .HasForeignKey("JobSkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Job");
+
+                    b.Navigation("JobSkill");
+                });
+
             modelBuilder.Entity("Entities.Models.JobSeeker", b =>
                 {
                     b.HasOne("Entities.Models.Country", "Country")
@@ -527,6 +705,11 @@ namespace SheGapAPI.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Entities.Models.Job", b =>
+                {
+                    b.Navigation("JobJobSkill");
                 });
 #pragma warning restore 612, 618
         }

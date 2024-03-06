@@ -38,24 +38,24 @@ namespace Services
             return employerDto;
         }
 
-        public EmployerDto GetEmployerById(Guid employerId, bool trackChanges)
+        public EmployerDto GetEmployerById(Guid Id, bool trackChanges)
         {
-            var employer = _repository.Employer.GetEmployerById(employerId, trackChanges);
+            var employer = _repository.Employer.GetEmployerById(Id, trackChanges);
 
             if (employer is null)
             {
-                throw new EmployerNotFoundException(employerId);
+                throw new EmployerNotFoundException(Id);
             }
             var employerDto = _mapper.Map<EmployerDto>(employer);
             return employerDto;
         }
 
-        public void UpdateEmployer(Guid employerId, UpdateEmployerDto employerDto, bool trackChanges)
+        public void UpdateEmployer(Guid Id, UpdateEmployerDto employerDto, bool trackChanges)
         {
-            var employerEntity = _repository.Employer.GetEmployerById(employerId, trackChanges);
+            var employerEntity = _repository.Employer.GetEmployerById(Id, trackChanges);
             if (employerEntity is null)
             {
-                throw new EmployerNotFoundException(employerId);
+                throw new EmployerNotFoundException(Id);
             }
 
             _mapper.Map(employerDto, employerEntity);

@@ -33,32 +33,32 @@ namespace Services
 
         public async Task<IEnumerable<EducationDto>> GetAllEducation(bool trackChanges)
         {
-            var education = await _repository.Education.GetAllEducation(trackChanges);
+            var education =  _repository.Education.GetAllEducation(trackChanges);
             var educationDto = _mapper.Map<IEnumerable<EducationDto>>(education);
             return educationDto;
         }
 
-        public async Task<EducationDto> GetEducationById(Guid educationId, bool trackChanges)
+        public EducationDto GetEducationById(Guid Id, bool trackChanges)
         {
-            var education = await _repository.Education.GetEducationById(educationId, trackChanges);
+            var education = _repository.Education.GetEducationById(Id, trackChanges);
 
             if (education is null)
             {
-                throw new EmployerNotFoundException(educationId);
+                throw new EducationNotFoundException(Id);
             }
             var educationDto = _mapper.Map<EducationDto>(education);
             return educationDto;
         }
 
-        public void UpdateEducation(Guid educationId,UpdateEducationDto updateEducationDto,bool trackChanges)
+        public void UpdateEducation(Guid Id, UpdateEducationDto educationDto, bool trackChanges)
         {
-            var educationEntity = _repository.Education.GetEducationById(educationId, trackChanges);
+            var educationEntity = _repository.Education.GetEducationById(Id, trackChanges);
             if (educationEntity is null)
             {
-                throw new EducationNotFoundException(educationId);
+                throw new EducationNotFoundException(Id);
             }
 
-            _mapper.Map(updateEducationDto, educationEntity);
+            _mapper.Map(educationDto, educationEntity);
             _repository.Save();
         }
     }

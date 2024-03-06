@@ -39,11 +39,11 @@ var app = builder.Build();
 
 //Global Exception Handling using logger
 var logger = app.Services.GetRequiredService<ILoggerManager>();
-app.ConfigureExceptionhandler(logger);
+//app.ConfigureExceptionhandler(logger);
 
 if (app.Environment.IsDevelopment())
 {
-  // app.UseDeveloperExceptionPage();
+   app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

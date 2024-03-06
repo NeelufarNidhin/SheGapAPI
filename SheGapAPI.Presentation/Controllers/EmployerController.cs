@@ -45,7 +45,7 @@ namespace SheGapAPI.Presentation.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> UpdateEmployer(Guid employerId, [FromBody] UpdateEmployerDto employerDto)
+        public async Task<IActionResult> UpdateEmployer(Guid Id, [FromBody] UpdateEmployerDto employerDto)
         {
             if (employerDto is null)
             {
@@ -58,7 +58,7 @@ namespace SheGapAPI.Presentation.Controllers
                 return UnprocessableEntity(ModelState);
             }
 
-            _service.EmployerService.UpdateEmployer(employerId, employerDto, trackChanges: true);
+            _service.EmployerService.UpdateEmployer(Id, employerDto, trackChanges: true);
 
             return NoContent();
         }
