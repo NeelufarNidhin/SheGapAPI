@@ -3,8 +3,11 @@ using AutoMapper;
 using Entities.Models;
 using Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.Configuration;
 using Service.Interfaces;
+using Shared.DTO;
 
 namespace Services
 {
@@ -21,12 +24,12 @@ namespace Services
 		private readonly Lazy<IJobSkillService> _jobSkillService;
 
         public ServiceManager( IRepositoryManager repositoryManager, ILoggerManager logger , IMapper mapper,
-			UserManager<User> userManager,IConfiguration configuration)
+			UserManager<User> userManager,IConfiguration configuration,IEmailSender emailSender, IUrlHelperFactory urlHelperFactory)
 		{
 			_userService = new Lazy<IUserService>(() => new UserService(repositoryManager, logger,mapper));
 			_jobSeekerService= new Lazy<IJobSeekerService>(() => new JobSeekerService(repositoryManager, logger, mapper));
             _employerService = new Lazy<IEmployerService>(() => new EmployerService(repositoryManager, logger, mapper));
-			_authenticationService = new Lazy<IAuthenticationService>(() => new AuthenticationService(logger, mapper, userManager, configuration));
+			_authenticationService = new Lazy<IAuthenticationService>(() => new AuthenticationService(logger, mapper, userManager, configuration,emailSender,urlHelperFactory));
 			_educationService = new Lazy<IEducationService>(() => new EducationService(repositoryManager, logger, mapper));
 			_experienceService = new Lazy<IExperienceService>(() => new ExperienceService(repositoryManager, logger, mapper));
 			_jobService = new Lazy<IJobService>(() => new JobService(repositoryManager, logger, mapper));
