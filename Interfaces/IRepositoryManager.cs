@@ -8,6 +8,9 @@ namespace Interfaces
 		IExperienceRepository Experience { get; }
 		IJobSeekerRepository JobSeeker { get; }
 		IEducationRepository Education { get; }
+		IJobRepository Job { get; }
+		IJobSkillRepository JobSkill { get; }
+		IJobTypeRepository JobType { get; }
         void Save();
 	}
 }

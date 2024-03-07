@@ -5,12 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Shared.DTO
 {
-	public record EducationDto
-	(
-        Guid Id, Guid JobSeekerId, string Degree, string FiledOfStudy, string College, int GraduationYear
-    );
-}
+    public record EducationDto(Guid Id, string Degree,string FieldOfStudy, string College, string GraduationYear, Guid JobSeekerId);
 
+   
+
+
+}
 
 
 

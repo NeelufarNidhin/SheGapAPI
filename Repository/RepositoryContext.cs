@@ -20,6 +20,11 @@ namespace Repository
         public DbSet<Employer> Employers { get; set; }
         public DbSet<Education> Education { get; set; }
         public DbSet<Experience> Experience { get; set; }
+        public DbSet<Job> Job { get; set; }
+        public DbSet<JobType> JobType { get; set; }
+        public DbSet<JobSkill> JobSkill { get; set; }
+        public DbSet<JobJobSkill> JobJobSkill { get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +37,26 @@ namespace Repository
                 .HasOne(e => e.Country)
                 .WithMany()
                 .HasForeignKey(e => e.CountryId);
+
+            modelBuilder.Entity<Job>()
+                .HasOne(j => j.JobType)   // Job has one JobType
+                .WithMany()               // JobType can be associated with many Jobs
+                .HasForeignKey(j => j.JobTypeId);  // Foreign key
+
+            modelBuilder.Entity<JobJobSkill>()
+                .HasKey(jjs => new { jjs.JobId, jjs.JobSkillId });  //
+
+            modelBuilder.Entity<JobJobSkill>()
+                .HasOne(jjs => jjs.Job)
+                .WithMany(j => j.JobJobSkill)
+                .HasForeignKey(jjs => jjs.JobId);
+
+            modelBuilder.Entity<JobJobSkill>()
+               .HasOne(jjs => jjs.JobSkill)
+               .WithMany()
+               .HasForeignKey(jjs => jjs.JobSkillId);
+
+
         }
 
     }

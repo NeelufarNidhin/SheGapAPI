@@ -39,24 +39,24 @@ namespace Services
             return jobSeekerDto;
         }
 
-        public JobSeekerDto GetJobSeekerById(Guid jobSeekerId, bool trackChanges)
+        public JobSeekerDto GetJobSeekerById(Guid Id, bool trackChanges)
         {
-            var jobSeeker = _repository.JobSeeker.GetJobSeekerById(jobSeekerId, trackChanges);
+            var jobSeeker = _repository.JobSeeker.GetJobSeekerById(Id, trackChanges);
 
             if(jobSeeker is null)
             {
-                throw new JobSeekerNotFoundException(jobSeekerId);
+                throw new JobSeekerNotFoundException(Id);
             }
             var jobSeekerDto = _mapper.Map<JobSeekerDto>(jobSeeker);
             return jobSeekerDto;
         }
 
-        public void UpdateJobSeeker(Guid jobSeekerId, UpdateJobSeekerDto jobSeekerDto, bool trackChanges)
+        public void UpdateJobSeeker(Guid Id, UpdateJobSeekerDto jobSeekerDto, bool trackChanges)
         {
-            var jobSeekerEntity = _repository.JobSeeker.GetJobSeekerById(jobSeekerId, trackChanges);
+            var jobSeekerEntity = _repository.JobSeeker.GetJobSeekerById(Id, trackChanges);
             if(jobSeekerEntity is null)
             {
-                throw new JobSeekerNotFoundException(jobSeekerId);
+                throw new JobSeekerNotFoundException(Id);
             }
 
             _mapper.Map(jobSeekerDto, jobSeekerEntity);

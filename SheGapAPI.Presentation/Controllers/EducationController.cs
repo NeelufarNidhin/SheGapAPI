@@ -1,4 +1,5 @@
 ﻿using System;
+using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
 using Service.Interfaces;
 using Shared.DTO;
@@ -36,14 +37,18 @@ namespace SheGapAPI.Presentation.Controllers
         }
 
         [HttpGet("{id:guid}", Name = "EducationById")]
-        public async Task<IActionResult> GetEducationById(Guid id)
+        public async Task<IActionResult> GetEducationById(Guid Id)
         {
-            var education = _service.EducationService.GetEducationById(id, trackChanges: false);
+            var education = _service.EducationService.GetEducationById(Id, trackChanges: false);
+            if (education is  null)
+            {
+                return BadRequest("Education not found");
+            }
             return Ok(education);
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> UpdateEducation(Guid educationId, [FromBody] UpdateEducationDto educationDto)
+        public async Task<IActionResult> UpdateEducation(Guid Id, [FromBody] UpdateEducationDto educationDto)
         {
             if (educationDto is null)
             {
@@ -56,7 +61,7 @@ namespace SheGapAPI.Presentation.Controllers
                 return UnprocessableEntity(ModelState);
             }
 
-            _service.EducationService.UpdateEducation(educationId, educationDto, trackChanges: true);
+            _service.EducationService.UpdateEducation(Id, educationDto, trackChanges: true);
 
             return NoContent();
         }

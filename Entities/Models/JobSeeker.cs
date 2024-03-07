@@ -22,7 +22,7 @@ namespace Entities.Models
         public string MobileNumber { get; set; }
         public string Bio { get; set; }
         public string ImageName { get; set; }
-        public bool CreatedStatus { get; set; } = false;
+       // public bool CreatedStatus { get; set; } = false;
         public DateTime CreateAt { get; set; } = DateTime.UtcNow;
 
         //Navigation

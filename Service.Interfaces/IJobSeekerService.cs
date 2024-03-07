@@ -7,9 +7,9 @@ namespace Service.Interfaces
 	public interface IJobSeekerService
 	{
         Task<IEnumerable<JobSeekerDto>> GetAllJobSeekers(bool trackChanges);
-        JobSeekerDto GetJobSeekerById(Guid jobSeekerId, bool trackChanges);
+        JobSeekerDto GetJobSeekerById(Guid Id, bool trackChanges);
         JobSeekerDto CreateJobSeeker(AddJobSeekerDto addJobSeekerDto);
-		void UpdateJobSeeker(Guid jobSeekerId, UpdateJobSeekerDto updateJobSeekerDto, bool trackChanges);
+		void UpdateJobSeeker(Guid Id, UpdateJobSeekerDto updateJobSeekerDto, bool trackChanges);
 	}
 }
 
